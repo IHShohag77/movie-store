@@ -1,0 +1,194 @@
+For run project = npm run dev
+for test run command = npx mocha movie.test.mjs
+
+
+
+Movie & Auth API Tests
+MongoDB Connected
+
+----- User Registration Response -----
+Status: 201
+Headers: {
+  "x-powered-by": "Express",
+  "access-control-allow-origin": "*",
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "42",
+  "etag": "W/\"2a-nMoFx54+czTntmSLXl3mqIsZV4A\"",
+  "date": "Wed, 19 Mar 2025 22:12:23 GMT",
+  "connection": "close"
+}
+Body: {
+  "message": "User registered successfully"
+}
+------------------------------
+
+    ✔ should register a new user (287ms)
+
+----- User Login Response -----
+Status: 200
+Headers: {
+  "x-powered-by": "Express",
+  "access-control-allow-origin": "*",
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "183",
+  "etag": "W/\"b7-qUeJwukQJWbEN4TsUPbnNdIc4j8\"",
+  "date": "Wed, 19 Mar 2025 22:12:23 GMT",
+  "connection": "close"
+}
+Body: {
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGI0MTQ3NGM4MDc1NDY4MDZmMzhiNSIsImlhdCI6MTc0MjQyMjM0MywiZXhwIjoxNzQyNDI1OTQzfQ.kcwwFmF0oCH1XQIOjcQwKdAcWsGTlqxwU7AsQWL2xyw"
+}
+------------------------------
+
+    ✔ should log in the user (166ms)
+📌 Received Request Body: {
+  title: 'Test Movie',
+  director: 'Jane Doe',
+  genre: 'Action',
+  releaseYear: 2024
+}
+
+----- Create Movie Response -----
+Status: 201
+Headers: {
+  "x-powered-by": "Express",
+  "access-control-allow-origin": "*",
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "246",
+  "etag": "W/\"f6-Zidq0YZFxJCdaVMKgCRVqkEtPMY\"",
+  "date": "Wed, 19 Mar 2025 22:12:23 GMT",
+  "connection": "close"
+}
+Body: {
+  "message": "Movie added successfully",
+  "movie": {
+    "title": "Test Movie",
+    "director": "Jane Doe",
+    "genre": "Action",
+    "releaseYear": 2024,
+    "_id": "67db41474c807546806f38b8",
+    "createdAt": "2025-03-19T22:12:23.880Z",
+    "updatedAt": "2025-03-19T22:12:23.880Z",
+    "__v": 0
+  }
+}
+------------------------------
+
+    ✔ should create a new movie (69ms)
+
+----- Fetch All Movies Response -----
+Status: 200
+Headers: {
+  "x-powered-by": "Express",
+  "access-control-allow-origin": "*",
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "201",
+  "etag": "W/\"c9-lBJ/4eFe6JM2fSv36GXoW2k3yKI\"",
+  "date": "Wed, 19 Mar 2025 22:12:23 GMT",
+  "connection": "close"
+}
+Body: [
+  {
+    "_id": "67db41474c807546806f38b8",
+    "title": "Test Movie",
+    "director": "Jane Doe",
+    "genre": "Action",
+    "releaseYear": 2024,
+    "createdAt": "2025-03-19T22:12:23.880Z",
+    "updatedAt": "2025-03-19T22:12:23.880Z",
+    "__v": 0
+  }
+]
+------------------------------
+
+    ✔ should fetch all movies (61ms)
+
+----- Fetch Single Movie Response -----
+Status: 200
+Headers: {
+  "x-powered-by": "Express",
+  "access-control-allow-origin": "*",
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "199",
+  "etag": "W/\"c7-pkWKehVagxCByPK5XCg7SPQ53qo\"",
+  "date": "Wed, 19 Mar 2025 22:12:24 GMT",
+  "connection": "close"
+}
+Body: {
+  "_id": "67db41474c807546806f38b8",
+  "title": "Test Movie",
+  "director": "Jane Doe",
+  "genre": "Action",
+  "releaseYear": 2024,
+  "createdAt": "2025-03-19T22:12:23.880Z",
+  "updatedAt": "2025-03-19T22:12:23.880Z",
+  "__v": 0
+}
+------------------------------
+
+    ✔ should fetch a single movie by ID (56ms)
+
+----- Update Movie Response -----
+Status: 200
+Headers: {
+  "x-powered-by": "Express",
+  "access-control-allow-origin": "*",
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "256",
+  "etag": "W/\"100-lAFA4BKvPtSTYovN4y89zfTrwPM\"",
+  "date": "Wed, 19 Mar 2025 22:12:24 GMT",
+  "connection": "close"
+}
+Body: {
+  "message": "Movie updated successfully",
+  "movie": {
+    "_id": "67db41474c807546806f38b8",
+    "title": "Updated Test Movie",
+    "director": "Jane Doe",
+    "genre": "Action",
+    "releaseYear": 2024,
+    "createdAt": "2025-03-19T22:12:23.880Z",
+    "updatedAt": "2025-03-19T22:12:24.070Z",
+    "__v": 0
+  }
+}
+------------------------------
+
+    ✔ should update a movie (62ms)
+
+----- Delete Movie Response -----
+Status: 200
+Headers: {
+  "x-powered-by": "Express",
+  "access-control-allow-origin": "*",
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "40",
+  "etag": "W/\"28-YWwd9VM98XGQrD3I+gqXdemiOV0\"",
+  "date": "Wed, 19 Mar 2025 22:12:24 GMT",
+  "connection": "close"
+}
+Body: {
+  "message": "Movie deleted successfully"
+}
+------------------------------
+
+    ✔ should delete a movie (55ms)
+
+
+  7 passing (3s)
+
+  "content-type": "application/json; charset=utf-8",
+  "content-length": "40",
+  "etag": "W/\"28-YWwd9VM98XGQrD3I+gqXdemiOV0\"",
+  "date": "Wed, 19 Mar 2025 22:12:24 GMT",
+  "connection": "close"
+}
+Body: {
+  "message": "Movie deleted successfully"
+}
+------------------------------
+
+    ✔ should delete a movie (55ms)
+
+
+  7 passing (3s)
